@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+"""
+https://en.wikipedia.org/wiki/Cramers_rule - algorithm used for P1 & P2
+"""
+
 import re
 
 
@@ -38,7 +42,7 @@ def part_one(data: list) -> int:
         ca = (px * by - py * bx) / (ax * by - ay * bx)
         # Count of B Button presses
         cb = (px - ax * ca) / bx
-        if ca % 1 == cb % 1 == 0:
+        if ca % 1 == cb % 1 == 0:  # ca & cb must be integers
             if ca <= 100 and cb <= 100:
                 total += int(ca * 3 + cb)
     return total
@@ -71,7 +75,7 @@ def part_two(data: list) -> int:
         ca = (px * by - py * bx) / (ax * by - ay * bx)
         # Count of B Button presses
         cb = (px - ax * ca) / bx
-        if ca % 1 == cb % 1 == 0:
+        if ca % 1 == cb % 1 == 0:  # ca & cb must be integers
             total += int(ca * 3 + cb)
     return total
 
